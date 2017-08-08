@@ -1,0 +1,18 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-dark">
+    <h1 class="title">{{'counter.' + type + '.TITLE' | translate}}</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <ion-list class="list-inset">
+      <ion-item collection-repeat="option in options"
+                class="item-icon-right"
+                type="item-text-wrap"
+                ng-click="selectOption(option.id)">
+        <h2 ng-bind="option.title"></h2>
+        <p ng-bind="option.subtitle"></p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>

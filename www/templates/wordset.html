@@ -1,0 +1,22 @@
+<ion-view view-title="{{$ctrl.wordSet.name}}">
+  <ion-content class="padding">
+    <form ng-submit="$ctrl.addNewWord()">
+      <label class="item item-input">
+        <span class="input-label">Add word</span>
+        <input type="text" autocorrect="off" autocapitalize="none" ng-model="$ctrl.newWord" focus-me>
+      </label>
+    </form>
+    <ion-list class="list-inset" show-reorder="true" show-delete="true">
+      <ion-item collection-repeat="word in $ctrl.wordSet.words"
+                class="item-remove-animate"
+                type="item-text-wrap">
+        <h2>{{word.text}}</h2>
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="$ctrl.remove(word)">
+        </ion-delete-button>
+        <!--<ion-reorder-button class="ion-navicon"-->
+                            <!--on-reorder="$ctrl.reorderItem(item, $fromIndex, $toIndex)">-->
+        <!--</ion-reorder-button>-->
+      </ion-item>
+    </ion-list>
+  </ion-content></ion-view>

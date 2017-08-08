@@ -1,5 +1,8 @@
 {
   "name": "voice-counter",
-  "app_id": "",
-  "type": "ionic1"
+  "app_id": "90286b97",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
 }

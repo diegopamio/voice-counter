@@ -1,0 +1,16 @@
+<ion-view view-title="{{'settings.TITLE' | translate}}">
+  <ion-content class="padding">
+    <ion-list>
+      <label class="item item-input item-select">
+        <div class="input-label" translate>
+          settings.CHOOSE_LANGUAGE
+        </div>
+        <select ng-model="$ctrl.$storage.settings.language">
+          <option translate value="auto">language.AUTO</option>
+          <option translate value="es">language.SPANISH</option>
+          <option translate value="en">language.ENGLISH</option>
+        </select>
+      </label>
+    </ion-list>
+  </ion-content>
+</ion-view>

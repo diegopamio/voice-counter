@@ -1,0 +1,62 @@
+{
+  "tabs": {
+    "SESSIONS_TITLE": "Sessions",
+    "WORDS_TITLE": "Words Sets",
+    "SETTINGS_TITLE": "Settings",
+    "COUNT_TITLE": "Count"
+  },
+  "sessions": {
+    "TITLE": "@:tabs.SESSIONS_TITLE",
+    "ADD": "Add",
+    "list": {
+      "item": {
+        "DELETE": "Delete"
+      }
+    }
+  },
+  "session": {
+    "DATE_LABEL": "Created"
+  },
+  "counter": {
+    "TITLE": "@:tabs.COUNT_TITLE",
+    "START_RECORDING": "Start",
+    "PAUSE_RECORDING": "Pause",
+    "STOP_RECORDING": "Stop",
+    "RESTART_RECORDING": "Restart",
+    "RECORDING": "Listening...",
+    "ADD_WORD": "Add Word",
+    "START_NEW_SESSION": "Start New Session",
+    "RESUME_SESSION": "Resume existing Session",
+    "newSessionModal": {
+      "TITLE": "Choose Words Template"
+    },
+    "resumeSessionModal": {
+      "TITLE": "Choose Session"
+    },
+    "addNewWord": {
+      "TITLE": "Add new word",
+      "SUB_TITLE": "Please use plain text",
+      "CANCEL": "Cancel",
+      "ADD": "Add"
+    }
+  },
+  "words": {
+    "TITLE": "Words Lists",
+    "WORDS": "words",
+    "list": {
+      "item": {
+        "DELETE": "Delete"
+      }
+    }
+  },
+  "settings": {
+    "TITLE": "@:tabs.SETTINGS_TITLE",
+    "CHOOSE_LANGUAGE": "Language"
+  },
+  "language": {
+    "ENGLISH": "English",
+    "SPANISH": "Spanish",
+    "AUTO": "Automatic"
+  },
+  "UNTITLED": "Untitled"
+}

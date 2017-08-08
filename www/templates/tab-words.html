@@ -1,0 +1,17 @@
+<ion-view view-title="{{'words.TITLE' | translate}}">
+  <ion-content class="padding">
+    <ion-list class="list-inset" can-swipe="true">
+      <ion-item collection-repeat="wordSet in $ctrl.wordSets"
+                class="item-remove-animate item-icon-right"
+                type="item-text-wrap"
+                ui-sref="tab.wordSet({wordSetId: wordSet.id})">
+        <h2>{{wordSet.name}}</h2>
+        <p>({{wordSet.words.length}} <span translate>words.WORDS</span>)</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="$ctrl.remove(wordSet)" translate>
+          words.list.item.DELETE
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+{
+  "tabs": {
+    "SESSIONS_TITLE": "Sessiones",
+    "WORDS_TITLE": "Palabras",
+    "SETTINGS_TITLE": "Ajustes",
+    "COUNT_TITLE": "Contar"
+  },
+  "sessions": {
+    "TITLE": "@:tabs.SESSIONS_TITLE",
+    "ADD": "Nueva",
+    "list": {
+      "item": {
+        "DELETE": "Borrar"
+      }
+    }
+  },
+  "session": {
+    "DATE_LABEL": "Creada"
+  },
+  "counter": {
+    "TITLE": "@:tabs.COUNT_TITLE",
+    "START_RECORDING": "Iniciar",
+    "PAUSE_RECORDING": "Pausar",
+    "STOP_RECORDING": "Detener",
+    "RESTART_RECORDING": "Reanudar",
+    "ADD_WORD": "Nueva Palabra",
+    "RECORDING": "Escuchando...",
+    "START_NEW_SESSION": "Nueva Sesión",
+    "RESUME_SESSION": "Reanudar Session Existente",
+    "newSessionModal": {
+      "TITLE": "Seleccionar Plantilla de Palabras"
+    },
+    "resumeSessionModal": {
+      "TITLE": "Seleccionar Sesion"
+    },
+    "addNewWord": {
+      "TITLE": "Agregar palabra",
+      "SUB_TITLE": "Por favor usar solo letras",
+      "CANCEL": "Cancelar",
+      "ADD": "Agregar"
+    }
+  },
+  "words": {
+    "TITLE": "@:tabs.WORDS_TITLE",
+    "WORDS": "palabras"
+  },
+  "settings": {
+    "TITLE": "@:tabs.SETTINGS_TITLE",
+    "CHOOSE_LANGUAGE": "Idioma"
+  },
+  "language": {
+    "ENGLISH": "Ingles",
+    "SPANISH": "Español",
+    "AUTO": "Automático"
+  },
+  "UNTITLED": "Nueva"
+}

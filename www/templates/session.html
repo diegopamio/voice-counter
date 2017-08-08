@@ -1,0 +1,12 @@
+<ion-view view-title="{{$ctrl.session.title}}">
+  <ion-content class="padding">
+    <p>
+      <span translate>session.DATE_LABEL</span> {{$ctrl.session.date | amTimeAgo}}
+    </p>
+    <h1>Counter</h1>
+    <div collection-repeat="word in $ctrl.session.words">
+      <span ng-bind="word.text"></span>: <span ng-bind="word.count"></span>
+    </div>
+    <button class="button button-balanced" ng-click="$ctrl.startDictation()">Start/Resume</button>
+  </ion-content>
+</ion-view>

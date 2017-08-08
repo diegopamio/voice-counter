@@ -1,0 +1,48 @@
+<ion-view view-title="{{'counter.TITLE' | translate}}">
+  <ion-content class="padding" ng-show="!$ctrl.session">
+    <br/>
+    <div class="padding text-center">
+      <i class="fa fa-wifi fa-4x fa-lg"></i>
+    </div>
+    <div class="padding text-center">
+      <i class="fa fa-microphone fa-4x fa-lg"></i>
+    </div>
+    <br/>
+    <button class="button button-block button-balanced" translate ng-click="$ctrl.newSession()">
+      counter.START_NEW_SESSION
+    </button>
+    <button class="button button-block button-positive" translate ng-click="$ctrl.resumeSession()">
+      counter.RESUME_SESSION
+    </button>
+  </ion-content>
+  <ion-content class="padding" ng-show="$ctrl.session">
+    <div class="card">
+      <div class="item item-text-wrap">
+        <span ng-show="$ctrl.isRecording" translate>counter.RECORDING</span>
+        <button class="button button-small button-assertive" ng-click="$ctrl.stopRecording()" ng-show="$ctrl.isRecording"><span><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> {{'counter.STOP_RECORDING' | translate}}</span> </button>
+        <button class="button button-small button-energized" ng-click="$ctrl.pauseRecording()" ng-show="$ctrl.isRecording"><span><i class="fa fa-pause"></i> {{'counter.PAUSE_RECORDING' | translate}}</span> </button>
+        <button class="button button-small button-balanced" ng-click="$ctrl.startRecording()" ng-show="!$ctrl.isRecording"><span><i class="fa fa-play"></i> {{'counter.START_RECORDING' | translate}}</span> </button>
+      </div>
+    </div>
+
+    <div class="card text-center col-50" collection-repeat="word in $ctrl.session.words">
+      <div class="item item-divider" ng-bind="word.text">
+      </div>
+      <div class="item item-text-wrap">
+        <h1 ng-bind="word.count || 0"></h1>
+      </div>
+    </div>
+    <div class="card text-center col-50">
+      <div class="item item-divider" translate>
+        counter.ADD_WORD
+      </div>
+      <div class="item item-text-wrap">
+        <button class="button button-balanced button-clear" ng-click="$ctrl.addNewWord()">
+          <i class="fa fa-plus-circle fa-2x"></i>
+        </button>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
