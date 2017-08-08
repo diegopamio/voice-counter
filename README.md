@@ -1,26 +1,33 @@
-Ionic App Base
+VOICE COUNTER
 ==============
 
-A starting project for Ionic that optionally supports using custom SCSS.
+An ionic app to aid counting different things when you have your hands unavailable
 
-## Using this project
+Context
+-------
+I've made this app to:
 
-We recommend using the [Ionic CLI](https://github.com/ionic-team/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+1. Help my wife in his profession (biochemist).
+2. Eventually get some revenue after publishing the app in the stores.
+3. As a showcase of my knowledge on Ionic and hybrid apps, as the only other things I've made cannot be shared/shown.
+4. Practice and experiment with some JavaScript concepts.
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+Integrated components
+---------------------
+* ngStorage for seamless local storage integration.
+* angular-translate for i18n
+* MomentJS for nicer date format, synced with angular-translate for locale.
+* annyang for speech recognition, with language synced with settings (translation and time/date i18n).
 
-```bash
-$ npm install -g ionic cordova
-```
+Used ionic features
+-------------------
+* Modal Dialogs
+* Keyboard Plugin
+* CrosWalk to enable speech recognition in older Android devices and improve preformance
+* cordoba-plugin-globalization to auto-detect device language
 
-Then run: 
-
-```bash
-$ ionic start myProject tabs --type=ionic1 --cordova
-```
-
-More info on this can be found on the Ionic [Getting Started](https://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/ionic-team/ionic-cli) repo.
-
-## Issues
-
-Issues have been disabled on this repo. If you do find an issue or have a question, consider posting it on the [Ionic Forum](https://forum.ionicframework.com/). If there is truly an error, follow our guidelines for [submitting an issue](https://ionicframework.com/submit-issue/) to the main Ionic repository.
+Some quirks and experiments
+---------------------------
+* upgraded to angular 1.6
+* a localStorage Entity Manager "library" from scratch (< 50 LoC)
+* No Styles, No Clases: I was able to do the entire app without defining a single css class, only using the standards and classes provided by ionic.
