@@ -19,12 +19,13 @@ Integrated components
 * MomentJS for nicer date format, synced with angular-translate for locale.
 * annyang for speech recognition, with language synced with settings (translation and time/date i18n).
 
-Used ionic features
+Used ionic/cordoba features
 -------------------
-* Modal Dialogs
+* Ionic Modal Dialogs
 * Keyboard Plugin
 * CrosWalk to enable speech recognition in older Android devices and improve preformance
-* cordoba-plugin-globalization to auto-detect device language
+* cordoba-plugin-globalization to auto-detect device language.
+* $cordovaDialogs
 
 Some quirks and experiments
 ---------------------------

@@ -1,12 +1,21 @@
 <ion-view view-title="{{$ctrl.session.title}}">
   <ion-content class="padding">
-    <p>
+    <p class="text-right">
       <span translate>session.DATE_LABEL</span> {{$ctrl.session.date | amTimeAgo}}
     </p>
-    <h1>Counter</h1>
-    <div collection-repeat="word in $ctrl.session.words">
-      <span ng-bind="word.text"></span>: <span ng-bind="word.count"></span>
+    <div class="list list-inset">
+      <div class="item item-text-wrap text-center">
+        <a class="button button-balanced" ui-sref="tab.counter({sessionId: $ctrl.session.id})"><i class="fa fa-play"></i> {{'session.RESUME' | translate}}</a>
+        <button class="button button-assertive" ng-click="$ctrl.deleteSession()" ng-show="!$ctrl.isRecording"><span><i class="fa fa-trash"></i> {{'counter.DISCARD' | translate}}</span> </button>
+      </div>
     </div>
-    <button class="button button-balanced" ng-click="$ctrl.startDictation()">Start/Resume</button>
+
+    <ion-list class="inset">
+      <ion-item collection-repeat="word in $ctrl.session.words">
+        <p ng-bind="word.text"></p>
+        <span class="badge badge-positive" ng-bind="word.count"></span>
+      </ion-item>
+    </ion-list>
+
   </ion-content>
 </ion-view>

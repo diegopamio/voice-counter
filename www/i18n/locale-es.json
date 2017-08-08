@@ -8,14 +8,26 @@
   "sessions": {
     "TITLE": "@:tabs.SESSIONS_TITLE",
     "ADD": "Nueva",
+    "UNTITLED_TIME_LABEL": "La creada",
+    "SLIDE_TO_NAME": "dezplazar a la izquierda para definir",
     "list": {
       "item": {
+        "NAME": "Nombrar",
+        "RENAME": "Renombrar",
         "DELETE": "Borrar"
       }
+    },
+    "rename": {
+      "TITLE": "Renombrar sesion",
+      "SUB_TITLE": "Por favor usar solo palabras",
+      "CANCEL": "Cancelar",
+      "OK": "Aceptar"
     }
+
   },
   "session": {
-    "DATE_LABEL": "Creada"
+    "DATE_LABEL": "Creada",
+    "RESUME": "Retomar"
   },
   "counter": {
     "TITLE": "@:tabs.COUNT_TITLE",
@@ -23,6 +35,8 @@
     "PAUSE_RECORDING": "Pausar",
     "STOP_RECORDING": "Detener",
     "RESTART_RECORDING": "Reanudar",
+    "RESET_COUNTERS": "Contadores a 0",
+    "DISCARD": "Eliminar",
     "ADD_WORD": "Nueva Palabra",
     "RECORDING": "Escuchando...",
     "START_NEW_SESSION": "Nueva Sesión",
@@ -38,6 +52,12 @@
       "SUB_TITLE": "Por favor usar solo letras",
       "CANCEL": "Cancelar",
       "ADD": "Agregar"
+    },
+    "removeSessionConfirm": {
+      "TITLE": "Eliminar sesion",
+      "SUB_TITLE": "Seguro desea eliminar la sesion?",
+      "YES": "Si",
+      "NO": "No"
     }
   },
   "words": {

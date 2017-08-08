@@ -3,7 +3,7 @@
     <name>VoiceCounter</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="diego.pamio@gmail.com" href="http://about/diegopamio/">Diego Pamio</author>
-    <content original-src="index.html" src="http://172.20.10.2:8101" />
+    <content original-src="index.html" src="http://172.20.10.2:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -85,6 +85,7 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+    <allow-navigation href="http://172.20.10.2:8100" />
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.5" />

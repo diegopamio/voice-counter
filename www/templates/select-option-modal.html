@@ -5,7 +5,7 @@
   </ion-header-bar>
   <ion-content class="padding">
     <ion-list class="list-inset">
-      <ion-item collection-repeat="option in options"
+      <ion-item ng-repeat="option in options"
                 class="item-icon-right"
                 type="item-text-wrap"
                 ng-click="selectOption(option.id)">

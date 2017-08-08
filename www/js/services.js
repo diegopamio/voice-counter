@@ -1,6 +1,9 @@
 
 angular.module('voice-counter.services', [])
 .factory('LocalStorageManager', function (uuid2, $localStorage) {
+  /**
+   * This is a factory function that represents an entity manager based on local storage.
+   */
   return function(collectionName, initialValue) {
     var defaultValue = {};
     defaultValue[collectionName] = initialValue;
@@ -10,7 +13,7 @@ angular.module('voice-counter.services', [])
         return storage[collectionName];
       },
       remove: function (instance) {
-        storage[collectionName].splice(storage.collection.indexOf(instance), 1);
+        _.remove(storage[collectionName], instance);
       },
       get: function (instanceId) {
         return _.find(storage[collectionName], {id: instanceId});
@@ -27,10 +30,10 @@ angular.module('voice-counter.services', [])
   }
 })
 .factory('Sessions', function(LocalStorageManager, uuid2) {
-  var sessions = [{
+  var demoSessions = [{
     id: uuid2.newguid(),
     date: new Date(),
-    title: 'Untitled 1',
+    title: 'Demo Session',
     words: [
       {
         text: 'linfo', count: 4
@@ -42,11 +45,26 @@ angular.module('voice-counter.services', [])
     ]
   }];
 
-  return LocalStorageManager('sessions', sessions);
+  var sessionsManager = LocalStorageManager('sessions', demoSessions);
+
+  var additionalFunctions = {
+    /**
+     * Resets all the word counts to 0.
+     */
+    resetCounters: function (sessionId) {
+      _.forEach(sessionsManager.get(sessionId).words, function (word) {
+        word.count = 0;
+      });
+    }
+  }
+
+  //Experimenting a little with "sort-of" "prototypical" inheritance.
+  _.merge(sessionsManager, additionalFunctions);
+  return sessionsManager;
 })
 
 .factory('WordSets', function ($localStorage, $translate, LocalStorageManager, uuid2) {
-  var defaultWordSets = {
+  var demoWordSets = {
     es: [
       {
         id: uuid2.newguid(),
@@ -79,15 +97,14 @@ angular.module('voice-counter.services', [])
     ]
   };
 
-  var wordSets = defaultWordSets;
-
-  return LocalStorageManager('wordSets', wordSets[$translate.use()]);
+  return LocalStorageManager('wordSets', demoWordSets[$translate.use()]);
 
 })
 .factory('Settings', function ($cordovaGlobalization, $translate, $ionicPlatform, $localStorage) {
 
   var storage = $localStorage;
 
+  // Checks the localStorage for settings and then specifically for a language setting
   if (!storage.settings) {
     storage.settings = {
       language: 'auto'
@@ -96,6 +113,16 @@ angular.module('voice-counter.services', [])
     storage.settings.language = storage.settings.language || 'auto';
   }
 
+  /**
+   * Sets the language used by the translation engine (angular-translate) which will afterwards fire the
+   * $translateChangeSuccess which is captured in the app.js module.run function to update also the localization of the
+   * moment (date utility) library.
+   *
+   * If language cannot be determined, it fallsback to 'en'.
+   *
+   * @param langCode is either a string representing the language (en) code or locale code (en-US), or 'auto', to
+   * trigger the automatic language detection provided by $cordovaGlobalization.
+   */
   var setLanguage = function (langCode) {
     if (langCode === 'auto') {
       $ionicPlatform.ready(function() {
@@ -122,6 +149,7 @@ angular.module('voice-counter.services', [])
     }
   };
 
+  //Initializes the language to whatever is in the localStorage.
   setLanguage(storage.settings.language);
 
   return {

@@ -78,16 +78,6 @@ angular.module('voice-counter', [
       }
     }
   })
-  .state('tab.new-session', {
-      url: '/sessions/new',
-      views: {
-        'tab-sessions': {
-          templateUrl: 'templates/session.html',
-          controllerAs: '$ctrl',
-          controller: 'SessionCtrl'
-        }
-      }
-  })
   .state('tab.session', {
     url: '/sessions/:sessionId',
     views: {
@@ -99,7 +89,7 @@ angular.module('voice-counter', [
     }
   })
   .state('tab.counter', {
-    url: '/counter',
+    url: '/counter?new&sessionId',
     views: {
       'tab-counter': {
         templateUrl: 'templates/tab-counter.html',
@@ -156,4 +146,15 @@ angular.module('voice-counter', [
       }, 350);
     }
   };
-}]);
+}]).directive("hold", function($ionicGesture){
+  return {
+    restrict: 'A',
+    link: function ($scope, $element, $attr){
+      var handleHold = function(e){
+        $scope.$apply($attr.hold);
+      }
+
+      $ionicGesture.on('hold', handleHold, $element);
+    }
+  }
+});;

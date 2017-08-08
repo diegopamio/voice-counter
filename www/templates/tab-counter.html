@@ -1,11 +1,20 @@
-<ion-view view-title="{{'counter.TITLE' | translate}}">
+<ion-view view-title="{{($ctrl.isRecording? 'counter.RECORDING': 'counter.TITLE') | translate}}">
+  <ion-nav-buttons side="right">
+    <div ng-show="$ctrl.isRecording" class="button button-clear button-assertive">
+      <span class="fa-stack fa-lgee ">
+        <i class="fa fa-spinner fa-pulse fa-fw fa-stack-2x"></i>
+        <i class="fa fa-microphone fa-stack-1x"></i>
+      </span>
+    </div>
+  </ion-nav-buttons>
+
   <ion-content class="padding" ng-show="!$ctrl.session">
     <br/>
     <div class="padding text-center">
-      <i class="fa fa-wifi fa-4x fa-lg"></i>
+      <i class="fa fa-wifi fa-5x fa-lg"></i>
     </div>
     <div class="padding text-center">
-      <i class="fa fa-microphone fa-4x fa-lg"></i>
+      <i class="fa fa-microphone fa-5x"></i>
     </div>
     <br/>
     <button class="button button-block button-balanced" translate ng-click="$ctrl.newSession()">
@@ -15,24 +24,17 @@
       counter.RESUME_SESSION
     </button>
   </ion-content>
-  <ion-content class="padding" ng-show="$ctrl.session">
-    <div class="card">
+  <ion-content ng-show="$ctrl.session">
+    <div class="list list-inset">
       <div class="item item-text-wrap">
-        <span ng-show="$ctrl.isRecording" translate>counter.RECORDING</span>
-        <button class="button button-small button-assertive" ng-click="$ctrl.stopRecording()" ng-show="$ctrl.isRecording"><span><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> {{'counter.STOP_RECORDING' | translate}}</span> </button>
-        <button class="button button-small button-energized" ng-click="$ctrl.pauseRecording()" ng-show="$ctrl.isRecording"><span><i class="fa fa-pause"></i> {{'counter.PAUSE_RECORDING' | translate}}</span> </button>
-        <button class="button button-small button-balanced" ng-click="$ctrl.startRecording()" ng-show="!$ctrl.isRecording"><span><i class="fa fa-play"></i> {{'counter.START_RECORDING' | translate}}</span> </button>
-      </div>
-    </div>
+        <button class="button button-small button-positive" ng-click="$ctrl.pauseRecording()" ng-show="$ctrl.isRecording"><span><i class="fa fa-pause"></i> {{'counter.PAUSE_RECORDING' | translate}}</span> </button>
+        <button class="button button-small button-positive" ng-click="$ctrl.startRecording()" ng-show="!$ctrl.isRecording"><span><i class="fa fa-play"></i> {{'counter.RESTART_RECORDING' | translate}}</span> </button>
+        <button class="button button-small button-dark" ng-click="$ctrl.resetCounters()"><span><i class="fa fa-undo"></i> {{'counter.RESET_COUNTERS' | translate}}</span> </button>
+        <button class="button button-small button-assertive" ng-click="$ctrl.deleteSession()" ng-show="!$ctrl.isRecording"><span><i class="fa fa-trash"></i> {{'counter.DISCARD' | translate}}</span> </button>
 
-    <div class="card text-center col-50" collection-repeat="word in $ctrl.session.words">
-      <div class="item item-divider" ng-bind="word.text">
-      </div>
-      <div class="item item-text-wrap">
-        <h1 ng-bind="word.count || 0"></h1>
       </div>
     </div>
-    <div class="card text-center col-50">
+    <div class="list card text-center">
       <div class="item item-divider" translate>
         counter.ADD_WORD
       </div>
@@ -41,6 +43,21 @@
           <i class="fa fa-plus-circle fa-2x"></i>
         </button>
 
+      </div>
+    </div>
+
+    <div class="" collection-repeat="word in $ctrl.session.words">
+      <div class="list list-inset text-center" >
+        <div class="item item-divider">
+          {{word.text}}
+          <!--This buttons doesn't work on mobile (too small), replaced by long-hold tap-->
+          <!--<i class="fa fa-times pull-right" ng-click="word.count = 0" ng-show="word.count > 0"></i>-->
+          <!--<i class="fa fa-undo pull-right" ng-click="word.count = word.count - 1" ng-show="word.count > 0"></i>-->
+        </div>
+        <div class="item item-text-wrap" hold="word.count = 0" ng-click="word.count = word.count + 1">
+          <h1 ng-bind="word.count || 0"></h1>
+        </div>
+        <br/>
       </div>
     </div>
 

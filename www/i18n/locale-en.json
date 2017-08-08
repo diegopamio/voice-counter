@@ -8,14 +8,25 @@
   "sessions": {
     "TITLE": "@:tabs.SESSIONS_TITLE",
     "ADD": "Add",
+    "UNTITLED_TIME_LABEL": "The one created",
+    "SLIDE_TO_NAME": "slide left to add a name",
     "list": {
       "item": {
+        "NAME": "Name",
+        "RENAME": "Rename",
         "DELETE": "Delete"
       }
+    },
+    "rename": {
+      "TITLE": "Rename Session",
+      "SUB_TITLE": "Please use plain text",
+      "CANCEL": "Cancel",
+      "OK": "Ok"
     }
   },
   "session": {
-    "DATE_LABEL": "Created"
+    "DATE_LABEL": "Created",
+    "RESUME": "Resume Session"
   },
   "counter": {
     "TITLE": "@:tabs.COUNT_TITLE",
@@ -23,7 +34,9 @@
     "PAUSE_RECORDING": "Pause",
     "STOP_RECORDING": "Stop",
     "RESTART_RECORDING": "Restart",
+    "RESET_COUNTERS": "Reset Counters",
     "RECORDING": "Listening...",
+    "DISCARD": "Discard",
     "ADD_WORD": "Add Word",
     "START_NEW_SESSION": "Start New Session",
     "RESUME_SESSION": "Resume existing Session",
@@ -38,6 +51,12 @@
       "SUB_TITLE": "Please use plain text",
       "CANCEL": "Cancel",
       "ADD": "Add"
+    },
+    "removeSessionConfirm": {
+      "TITLE": "Delete Session",
+      "SUB_TITLE": "Are you sure you want to delete the session?",
+      "YES": "Yes",
+      "NO": "No"
     }
   },
   "words": {

@@ -1,19 +1,26 @@
 <ion-view view-title="{{'sessions.TITLE' | translate}}">
   <ion-nav-buttons side="right">
-    <a class="button button-clear button-positive" ui-sref="tab.new-session">+ {{'sessions.ADD' | translate}}</span> </a>
+    <a class="button button-clear button-positive" ui-sref="tab.counter({new: true})">+ {{'sessions.ADD' | translate}}</span> </a>
   </ion-nav-buttons>
 
   <ion-content class="padding">
     <ion-list class="list-inset" can-swipe="true">
-      <ion-item collection-repeat="session in $ctrl.sessions"
+      <!--Had to use ns-repeat as collection-repeat is incompatible with Angular 1.6 apparently-->
+      <!--I should use vs-repeat if I found there will be many sessions-->
+      <ion-item ng-repeat="session in $ctrl.sessions"
                 class="item-remove-animate item-icon-right"
                 type="item-text-wrap"
                 ui-sref="tab.session({sessionId: session.id})">
-        <h2>{{session.title}}</h2>
-        <p am-time-ago="session.date"></p>
+        <h2 ng-show="session.title" ng-bind="session.title"></h2>
+        <h2 ng-show="!session.title"><span translate>sessions.UNTITLED_TIME_LABEL</span> <span am-time-ago="session.date"></span></h2>
+        <p  ng-show="session.title" am-time-ago="session.date"></p>
+        <p ng-show="!session.title" translate>sessions.SLIDE_TO_NAME</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
         <ion-option-button class="button-assertive" ng-click="$ctrl.remove(session)" translate>
         sessions.list.item.DELETE
+        </ion-option-button>
+        <ion-option-button class="button-energized" ng-click="$ctrl.rename(session)">
+          {{session.title? 'sessions.list.item.RENAME': 'sessions.list.item.NAME' | translate}}
         </ion-option-button>
       </ion-item>
     </ion-list>
