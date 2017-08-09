@@ -19,7 +19,7 @@ angular.module('voice-counter.controllers').controller('SessionsCtrl', function(
   }
 
   /**
-   * Renames a session (title) using a ionic popup.
+   * Renames a session (title) using a native dialog.
    * @param session is the whole session object to rename its title.
    */
   $ctrl.rename = function (session) {
@@ -28,7 +28,7 @@ angular.module('voice-counter.controllers').controller('SessionsCtrl', function(
       'sessions.rename.SUB_TITLE',
       'sessions.rename.CANCEL',
       'sessions.rename.OK']).then(function (translations) {
-      var result = $cordovaDialogs.prompt(
+      $cordovaDialogs.prompt(
         translations['sessions.rename.SUB_TITLE'],
         translations['sessions.rename.TITLE'],
         [translations['sessions.rename.CANCEL'], translations['sessions.rename.OK']],

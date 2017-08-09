@@ -62,7 +62,20 @@
   },
   "words": {
     "TITLE": "@:tabs.WORDS_TITLE",
-    "WORDS": "palabras"
+    "WORDS": "palabras",
+    "list": {
+      "item": {
+        "DELETE": "Delete",
+        "RENAME": "Rename"
+      }
+    },
+    "rename": {
+      "TITLE": "Renombrar conjunto de palabras",
+      "SUB_TITLE": "Por favor usar solo palabras",
+      "CANCEL": "Cancelar",
+      "OK": "Aceptar"
+    }
+
   },
   "settings": {
     "TITLE": "@:tabs.SETTINGS_TITLE",

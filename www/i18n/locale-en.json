@@ -64,8 +64,15 @@
     "WORDS": "words",
     "list": {
       "item": {
-        "DELETE": "Delete"
+        "DELETE": "Delete",
+        "RENAME": "Rename"
       }
+    },
+    "rename": {
+      "TITLE": "Rename Session",
+      "SUB_TITLE": "Please use plain text",
+      "CANCEL": "Cancel",
+      "OK": "Ok"
     }
   },
   "settings": {
