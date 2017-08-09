@@ -3,6 +3,11 @@ VOICE COUNTER
 
 An ionic app to aid counting different things when you have your hands unavailable
 
+Demo
+----
+
+[![Demo Video](http://img.youtube.com/vi/_9a_9q3_SLA/0.jpg)](http://www.youtube.com/watch?v=_9a_9q3_SLA "Voice Counter Demo")
+
 Context
 -------
 I've made this app to:
