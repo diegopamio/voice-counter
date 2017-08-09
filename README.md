@@ -5,8 +5,11 @@ An ionic app to aid counting different things when you have your hands unavailab
 
 Demo
 ----
+Unfortunately, the demo doesn't demo the most important part of the software, its ability to recognize the voice commands, but at least gives an idea of the features.
 
 [![Demo Video](http://img.youtube.com/vi/_9a_9q3_SLA/0.jpg)](http://www.youtube.com/watch?v=_9a_9q3_SLA "Voice Counter Demo")
+
+A better demo will be when I publish this to the Apple/Google App Stores.
 
 Context
 -------
