@@ -2,10 +2,13 @@ angular.module('voice-counter.controllers').controller('WordsCtrl', function(
   WordSets,
   $translate,
   $cordovaDialogs,
-  $ionicListDelegate
+  $ionicListDelegate,
+  $scope
 ) {
   var $ctrl = this;
-  $ctrl.wordSets = WordSets.all();
+  $scope.$on('$ionicView.enter', function(e) {
+    $ctrl.wordSets = WordSets.all();
+  });
 
   /**
    * Removes a session, it just calls the WordSets service to do it.

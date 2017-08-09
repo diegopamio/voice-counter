@@ -1,4 +1,7 @@
 <ion-view view-title="{{'words.TITLE' | translate}}">
+  <ion-nav-buttons side="right">
+    <a class="button button-clear button-positive" ui-sref="tab.wordSet">+ {{'words.ADD' | translate}}</span> </a>
+  </ion-nav-buttons>
   <ion-content class="padding">
     <ion-list class="list-inset" can-swipe="true">
       <ion-item collection-repeat="wordSet in $ctrl.wordSets"

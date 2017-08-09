@@ -63,6 +63,7 @@
   "words": {
     "TITLE": "@:tabs.WORDS_TITLE",
     "WORDS": "palabras",
+    "ADD": "Add",
     "list": {
       "item": {
         "DELETE": "Delete",
